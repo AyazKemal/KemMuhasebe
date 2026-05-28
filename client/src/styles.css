@@ -1,12 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
 
-@import 'tailwindcss';
+@import 'tailwindcss' important;
 
-.container {
-  @apply mx-auto px-6
+$customTheme: mat.define-theme();
+
+@include mat.core();
+
+.custom-theme {
+  @include mat.all-component-themes($customTheme);
+
+  .mdc-button,
+  .mdc-raised-button,
+  .mdc-stroked-button,
+  .mdc-flat-button {
+    @apply rounded-md;
+  }
 }
 
-/* .text-primary {
+.container {
+  @apply mx-auto max-w-screen-2xl;
+}
+
+.text-primary {
   color: #7d00fa;
 }
 
@@ -15,7 +30,7 @@ button.match-input-height {
 }
 
 .mdc-notched-outline__notch {
-  border-right-style: none !important
+  border-right-style: none !important;
 }
 
 .mat-mdc-snack-bar-container.snack-error {
@@ -28,4 +43,4 @@ button.match-input-height {
   --mdc-snackbar-container-color: green;
   --mat-snack-bar-button-color: #fff;
   --mdc-snackbar-supporting-text-color: #fff;
-} */
+}
