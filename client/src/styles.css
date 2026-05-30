@@ -2,7 +2,7 @@
 
 @import 'tailwindcss' important;
 
-$customTheme: mat.define-theme();
+/* $customTheme: mat.define-theme(); */
 
 @include mat.core();
 
