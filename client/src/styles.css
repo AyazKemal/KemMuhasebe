@@ -1,5 +1,7 @@
 @use '@angular/material' as mat;
 
+
+
 @import 'tailwindcss' important;
 
 /* $customTheme: mat.define-theme(); */
@@ -32,8 +34,25 @@ button.match-input-height {
 .mdc-notched-outline__notch {
   border-right-style: none !important;
 }
+:root {
+  .snack-error{
+   @include mat.snack-bar-overrides((
+    button-color: white,
+    container-color: red,
+    supporting-text-color: white
+  ));
+}
 
-.mat-mdc-snack-bar-container.snack-error {
+}
+
+.snack-success{
+   @include mat.snack-bar-overrides((
+    button-color: white,
+    container-color: green,
+    supporting-text-color: white
+  ));
+}
+/* .mat-mdc-snack-bar-container.snack-error {
   --mdc-snackbar-container-color: red;
   --mat-snack-bar-button-color: #fff;
   --mdc-snackbar-supporting-text-color: #fff;
@@ -43,4 +62,4 @@ button.match-input-height {
   --mdc-snackbar-container-color: green;
   --mat-snack-bar-button-color: #fff;
   --mdc-snackbar-supporting-text-color: #fff;
-}
+} */
